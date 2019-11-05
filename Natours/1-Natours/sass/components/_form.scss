@@ -12,14 +12,20 @@
         border: none;
         background-color: rgba($color-white, .5);
         border-bottom: 3px solid transparent;
-        width: 90%;
+        width: 70%;
         display: block;
         
         &:focus {
             outline: none;
             box-shadow: 0 1rem 2rem rgba($color-black, .1);
             border-bottom: 3px solid $color-primary;
+
+            &:focus:invalid {
+                border-bottom: 3px solid $color-secondary-dark;
+            }
         }
+
+        
 
         &::-webkit-input-placeholder {
             color: $color-grey-dark-2;
@@ -32,9 +38,21 @@
     
     }
 
-    &__label{
-
+    &__label {
+        font-size: 1.2rem;
+        font-weight: 700;
+        margin-left: 2rem;
+        margin-top: .7rem;
+        display: block;
+        transition: all .3s;
     }
+
+    &__input:placeholder-shown + &__label {
+        opacity: 0.5;
+        visibility: hidden;
+        transform: translateY(-4rem);
+    }
+
 
     &::-webkit-input-placeholder{
         color: $color-grey-dark-2
@@ -46,4 +64,25 @@
         border-bottom: 3px solid $color-primary;
     }
 
+    &__radio-group {
+        width: 35%;
+        display: inline-block;
+    }
+
+    &__radio-label {
+        font-size: $default-font-size;
+        cursor: pointer;
+    }
+    
+    &__radio-button{
+        height: 3rem;
+        width: 3rem;
+        border: 5px solid $color-primary;
+        border-radius: 50%;
+        display: inline-block;
+
+        &::after {
+
+        }
+    }
 }
