@@ -5,12 +5,8 @@
   "main": "index.js",
   "scripts": {
     "watch:sass": "node-sass sass/main.scss css/style.css -w",
-    "watch:sass-6.11.3": "npm-run-all use-6.11.3 watch:sass",
-    "use-10.15.3":"nvm use 10.15.3",
-    "use-6.11.3":"nvm use 6.11.3",
     "devserver": "live-server",
-    "devserver-10.15.3": "npm-run-all use-10.15.3 devserver",
-    "start":"npm-run-all --parallel devserver-10.15.3 watch:sass-6.11.3",
+    "start":"npm-run-all --parallel devserver watch:sass",
 
     "compile:sass": "node-sass sass/main.scss css/style.comp.css",
     "concat:css": "concat -o css/style.concat.css css/icon-font.css css/style.comp.css",
