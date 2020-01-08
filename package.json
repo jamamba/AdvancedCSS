@@ -1,0 +1,26 @@
+{
+  "name": "natours",
+  "version": "1.0.0",
+  "description": "Landing page for natours",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jamamba/AdvancedCSS.git"
+  },
+  "author": "Kadzilla",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jamamba/AdvancedCSS/issues"
+  },
+  "homepage": "https://github.com/jamamba/AdvancedCSS#readme",
+  "devDependencies": {
+    "node-sass": "^4.12.0"
+  },
+  "dependencies": {}
+}
