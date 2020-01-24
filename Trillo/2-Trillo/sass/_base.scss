@@ -27,6 +27,7 @@ Grey dark 3: #999
     --color-grey-dark-1: #333;
     --color-grey-dark-2: #777;
     --color-grey-dark-3: #999;
+    --color-grey-dark-4: #aaa;
     --shadow-dark: 0 2rem 6rem rgba(0,0,0,.3);
     --shadow-light: 0 2rem 5rem rgba(0,0,0,.06);
 
@@ -42,6 +43,86 @@ $bp-small: 37.5em;//600px
 $bp-smallest: 31.25em;//500px
 
 
+@mixin menu-items-hover {
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 3px;
+        background-color: var(--color-primary);
+        transform: scaleY(0);
+        transition: transform .2s, 
+                    width .4s  cubic-bezier(1,0,0,1) .2s,
+                    background-color .1s ;
+        z-index: 0;
+        
+    }
+    &:active::before{
+        background-color: var(--color-primary-light);
+    } 
+
+    &:hover::before {
+    transform: scaleY(1);
+    width: 100%;
+    }
+}
+
+@mixin header-menu-hide {
+
+    display: none;
+    //height: 0;
+    position: absolute;
+    top: 100%;
+    right: 0rem;
+    width: 50%;
+    padding: 1rem 0rem;
+    background-color: var(--color-grey-light-2);
+    z-index: 1222;
+    transition: 2s all;
+    box-shadow: 0 1rem 4rem rgba(0,0,0,.5);
+
+
+    &__list {
+        list-style-type: none;
+         width: 100%;
+
+    }
+    
+
+    &__item {
+     margin: 0 auto;
+     position: relative;
+     width: 100%;
+     z-index: 1222;
+
+     //@include menu-items-hover 
+     
+    }
+
+    &__link:link,
+    &__link:visited {
+         position: relative;
+         color: var(--color-grey-dark-2);
+        text-decoration: none;
+        text-transform: uppercase;
+        padding: 0.5rem 3rem;
+        //outline: 1px solid red;
+        display: inline-block;
+        width: 100%;
+        z-index: 1222;
+        transition: color .4s;
+        
+    }
+
+    &__link:hover {
+     color: var(--color-grey-light-2);
+     transition: color .4s  cubic-bezier(1,0,0,1) .2s;
+    }
+}
+
+
 * {
     margin: 0;
     padding: 0;
@@ -50,7 +131,7 @@ $bp-smallest: 31.25em;//500px
 *, 
 *::after,
 *::before {
-    box-sizing: inherit;
+    box-sizing: border-box;
 }
 
 html {

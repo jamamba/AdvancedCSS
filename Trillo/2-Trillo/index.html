@@ -25,21 +25,71 @@
                 </form>
 
                 <nav class="user-nav">
-                    <div class="user-nav__icon-box">
-                        <svg class="user-nav__icon">
-                            <use xlink:href="img/sprite.svg#icon-bookmark"></use>
-                        </svg>
-                        <span class="user-nav__notification">7</span>
+                    <div class="user-nav__icon-box ">
+                        <a href="" class="user-nav__bookmarks-block-link icon-box__link">
+                            <svg class="user-nav__icon">
+                                <use xlink:href="img/sprite.svg#icon-bookmark"></use>
+                                <span class="user-nav__notification">7</span>
+                            </svg>
+                            
+                        </a>
                     </div>
-                    <div class="user-nav__icon-box">
-                        <svg class="user-nav__icon">
-                            <use xlink:href="img/sprite.svg#icon-chat"></use>
-                        </svg>
-                        <span class="user-nav__notification">13</span>
+                    <div class="user-nav__icon-box user-nav__message-block">
+                        <a href="#" class="user-nav__message-block-link icon-box__link">  
+                            <svg class="user-nav__icon">
+                                <use xlink:href="img/sprite.svg#icon-chat"></use>
+                            </svg>
+                            <span class="user-nav__notification">13</span>
+                        </a>
+                        
+                        <nav class="user-nav__chat-menu">
+                            <ul class="user-nav__chat-menu__list">
+                                <li class="user-nav__chat-menu__item">
+                                    <a href="#" class="user-nav__chat-menu__link">
+                                        <div class="user-nav__chat-menu__message-content">
+                                            <img src="img/user-1.jpg" alt="User-1" class="user-avatar"/>
+                                            <p class="user-message">Hello! I have a good travel proposition for you! just consider taking one of these tour propositions, which took the best reviews...
+                                            I have a good travel proposition for you! just consider taking one of these tour propositions, which took the best reviews...
+                                            </p>
+                                            <span class="message-time">24 Aug 2017, 13:32</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="user-nav__chat-menu__item">
+                                        <a href="#" class="user-nav__chat-menu__link">
+                                            <div class="user-nav__chat-menu__message-content">
+                                                <img src="img/user-2.jpg" alt="User-2" class="user-avatar"/>
+                                                <p class="user-message">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repudiandae quam, aspernatur magnam eligendi reprehenderit dignissimos. Possimus repellendus vel atque facilis, quia id, nulla fugit suscipit veniam nihil cum iusto dolores?
+                                                </p>
+                                                <span class="message-time">28 Jul 2036, 11:30</span>
+                                            </div>
+                                        </a>
+                                </li>
+                                <li class="user-nav__chat-menu__item">
+                                        <a href="#" class="user-nav__chat-menu__link">
+                                            <div class="user-nav__chat-menu__message-content">
+                                                <img src="img/user-3.jpg" alt="User-3" class="user-avatar"/>
+                                                <p class="user-message">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repudiandae quam, aspernatur magnam eligendi reprehenderit dignissimos. Possimus repellendus vel atque facilis, quia id, nulla fugit suscipit veniam nihil cum iusto dolores?
+                                                </p>
+                                                <span class="message-time">25 Sep 2017, 15:33</span>
+                                            </div>
+                                        </a>
+                                </li>
+                            </ul>
+                        </nav>
                     </div>
                     <div class="user-nav__user">
                         <img src="img/user.jpg" alt="User photo" class="user-nav__user-photo">
                         <span class="user-nav__user-name">Jonas</span>
+                        <nav class="user-nav__user-menu">
+                            <ul class="user-nav__user-menu__list">
+                                <li class="user-nav__user-menu__item"><a href="#" class="user-nav__user-menu__link">Profile</a></li>
+                                <li class="user-nav__user-menu__item"><a href="#" class="user-nav__user-menu__link">Booking</a></li>
+                                <li class="user-nav__user-menu__item"><a href="#" class="user-nav__user-menu__link">History</a></li>
+                                
+                                <li class="user-nav__user-menu__item"><a href="#" class="user-nav__user-menu__link">Log Out</a></li>
+                            </ul>
+                        </nav>
                     </div>
                 </nav>
             </header>
