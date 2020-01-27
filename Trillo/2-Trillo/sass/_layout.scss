@@ -92,6 +92,13 @@
         margin-right: 0;
         margin-bottom: 3rem;
     }
+
+    @media only screen and (max-width: $bp-smallest) {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+    }
 }
 
 .user-reviews {

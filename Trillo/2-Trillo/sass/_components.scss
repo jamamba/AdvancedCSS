@@ -104,7 +104,7 @@
         padding: 0;
 
         .icon-box__link {
-            padding: 2.6rem 2rem;
+            padding: 3rem 2rem 0 2rem;
             display: inline-block;
             width: 100%;
             height: 100%;
@@ -155,9 +155,24 @@
     &__chat-menu {
         @include header-menu-hide;
         width:800%;
+        
+        
+
+        @media only screen and (max-width: $bp-smallest) {
+            right: -190%;
+            width:95vw;
+            top: 150%;
+        }
 
         &__item:not(:last-child) {
-            //border-bottom: 1px solid var(--color-grey-light-4);
+            border-bottom: 1px solid var(--color-grey-light-4);
+            box-shadow: var(--shadow-light);
+        }
+
+        &__item {
+            
+            overflow: hidden;
+            max-height: 30%;
         }
 
         &__message-content {
@@ -165,7 +180,7 @@
             overflow: hidden;
             //align-items: center;
             justify-content: space-between;
-            height: 6rem;
+            //height: 6rem;
 
             text-transform: none;
             
@@ -194,9 +209,13 @@
                 width:10rem;
             }
 
-            .user-message{
+            .user-message {
                 font-size: 1.2rem;
                 color: #000;
+
+                @media only screen and (max-width: $bp-smallest) {
+                    font-size: 1.5rem;
+                }
             }
         }
 
@@ -265,6 +284,10 @@
 
         &:not(:last-child) {
             margin-bottom: .5em;
+
+            @media only screen and (max-width: $bp-medium) {
+                margin-bottom: 0;
+            }
         }
 
         @media only screen and (max-width: $bp-medium) {
@@ -342,14 +365,64 @@
 
 .gallery {
     display: flex;
+    @media only screen and (max-width: $bp-small) {
+            
+        flex-direction: column;
+    }
+
+    box-sizing: border-box;
 
 
     &__photo {
         width: 100%;
         display: block;
+        box-sizing: border-box;
+        transition: filter .2s;
+        filter: drop-shadow(2px 4px 8px transparent) brightness(0.8);
+    }
 
+    &__item {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-sizing: border-box;
+        
+
+        
+        
+        &:hover > .gallery__photo {
+            filter: drop-shadow(2px 4px 10px #555) brightness(1);
+            transition: filter .2s;
+        }
+
+        &:hover > &-caption {
+            opacity: 0;
+            box-sizing: border-box;
+        }
+
+        &-caption {
+            position: absolute;
+            box-sizing: border-box;
+            width: 100%;
+            opacity: 1;
+            display: block;
+            cursor: pointer;
+            text-align: center;
+            padding: 2rem;
+            color: #fff;
+            font-size: 2rem;
+            text-shadow: 1px 1px 1px #000;
+            transition: opacity .2s ease-in ;
+            background-color: rgba($color: #eee, $alpha: 0.2);
+
+
+            
+        }        
     }
 }
+
+
 
 //////////////////////////////
 // HOTEL OVERVIEW
@@ -382,6 +455,10 @@
         width: 1.75rem;
         height: 1.74rem;
         fill: var(--color-primary);
+        @media only screen and (max-width: $bp-small) {
+            width: 2rem;
+            height: 2rem;
+        }
     }
 
     &__location {
@@ -424,11 +501,11 @@
     }
 
     &__rating-count {
-        font-size: .8rem;
+        font-size: 1rem;
         text-transform: uppercase;
-
+        text-align: center;
         @media only screen and (max-width: $bp-small) {
-            font-size: .5rem;
+            font-size: 1.2rem;
             
         }
     }
@@ -506,6 +583,11 @@
     border-bottom: var(--line);
     display: flex;
     flex-wrap: wrap;
+
+    @media only screen and (max-width: $bp-smallest) {
+        display: inline-block;
+       align-self: center;
+    }
 
     &__item {
         flex: 0 0 50%;
@@ -613,11 +695,17 @@
         text-transform: uppercase;
         font-weight: 600;
         margin-bottom: .4rem;
+        @media only screen and (max-width: $bp-smallest) {
+            font-size: 1.5rem;
+        }
     }
 
     &__user-date {
         font-size: 1rem;
         color: var(--color-grey-dark-3);
+        @media only screen and (max-width: $bp-smallest) {
+            font-size: 1.3rem;
+        }
     }
 
     &__rating {
@@ -655,6 +743,7 @@
         font-weight: 300;
         text-transform: uppercase;
         margin-bottom: 2.5rem;
+        padding: 0 2rem;
     }
 }
 

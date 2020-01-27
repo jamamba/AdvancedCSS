@@ -26,6 +26,7 @@ Grey dark 3: #999
   --color-grey-dark-3: #999;
   --color-grey-dark-4: #aaa;
   --shadow-dark: 0 2rem 6rem rgba(0,0,0,.3);
+  --shadow-medium: 0 2rem 6rem rgba(0,0,0,.15);
   --shadow-light: 0 2rem 5rem rgba(0,0,0,.06);
   --line: 1px solid var(--color-grey-light-2); }
 
@@ -132,6 +133,12 @@ body {
     .description {
       margin-right: 0;
       margin-bottom: 3rem; } }
+  @media only screen and (max-width: 31.25em) {
+    .description {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-content: center; } }
 
 .user-reviews {
   flex: 1;
@@ -201,7 +208,7 @@ body {
     position: relative;
     padding: 0; }
     .user-nav__icon-box .icon-box__link {
-      padding: 2.6rem 2rem;
+      padding: 3rem 2rem 0 2rem;
       display: inline-block;
       width: 100%;
       height: 100%; }
@@ -262,11 +269,21 @@ body {
     .user-nav__chat-menu__link:hover {
       color: var(--color-grey-light-2);
       transition: color 0.4s cubic-bezier(1, 0, 0, 1) 0.2s; }
+    @media only screen and (max-width: 31.25em) {
+      .user-nav__chat-menu {
+        right: -190%;
+        width: 95vw;
+        top: 150%; } }
+    .user-nav__chat-menu__item:not(:last-child) {
+      border-bottom: 1px solid var(--color-grey-light-4);
+      box-shadow: var(--shadow-light); }
+    .user-nav__chat-menu__item {
+      overflow: hidden;
+      max-height: 30%; }
     .user-nav__chat-menu__message-content {
       display: flex;
       overflow: hidden;
       justify-content: space-between;
-      height: 6rem;
       text-transform: none; }
       .user-nav__chat-menu__message-content > :not(:last-child) {
         margin-right: 1rem; }
@@ -285,6 +302,9 @@ body {
       .user-nav__chat-menu__message-content .user-message {
         font-size: 1.2rem;
         color: #000; }
+        @media only screen and (max-width: 31.25em) {
+          .user-nav__chat-menu__message-content .user-message {
+            font-size: 1.5rem; } }
     .user-nav__chat-menu__link {
       display: inline-block;
       padding: .5rem 1rem !important; }
@@ -358,6 +378,9 @@ body {
     position: relative; }
     .side-nav__item:not(:last-child) {
       margin-bottom: .5em; }
+      @media only screen and (max-width: 56.25em) {
+        .side-nav__item:not(:last-child) {
+          margin-bottom: 0; } }
     @media only screen and (max-width: 56.25em) {
       .side-nav__item {
         flex: 1; } }
@@ -420,10 +443,43 @@ body {
       margin: 0; } }
 
 .gallery {
-  display: flex; }
+  display: flex;
+  box-sizing: border-box; }
+  @media only screen and (max-width: 37.5em) {
+    .gallery {
+      flex-direction: column; } }
   .gallery__photo {
     width: 100%;
-    display: block; }
+    display: block;
+    box-sizing: border-box;
+    transition: filter .2s;
+    filter: drop-shadow(2px 4px 8px transparent) brightness(0.8); }
+  .gallery__item {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box; }
+    .gallery__item:hover > .gallery__photo {
+      filter: drop-shadow(2px 4px 10px #555) brightness(1);
+      transition: filter .2s; }
+    .gallery__item:hover > .gallery__item-caption {
+      opacity: 0;
+      box-sizing: border-box; }
+    .gallery__item-caption {
+      position: absolute;
+      box-sizing: border-box;
+      width: 100%;
+      opacity: 1;
+      display: block;
+      cursor: pointer;
+      text-align: center;
+      padding: 2rem;
+      color: #fff;
+      font-size: 2rem;
+      text-shadow: 1px 1px 1px #000;
+      transition: opacity .2s ease-in;
+      background-color: rgba(238, 238, 238, 0.2); }
 
 .overview {
   display: flex;
@@ -446,6 +502,10 @@ body {
     width: 1.75rem;
     height: 1.74rem;
     fill: var(--color-primary); }
+    @media only screen and (max-width: 37.5em) {
+      .overview__icon-star, .overview__icon-location {
+        width: 2rem;
+        height: 2rem; } }
   .overview__location {
     font-size: 1.5rem;
     display: flex;
@@ -474,11 +534,12 @@ body {
       .overview__rating-average {
         font-size: 1.8rem; } }
   .overview__rating-count {
-    font-size: .8rem;
-    text-transform: uppercase; }
+    font-size: 1rem;
+    text-transform: uppercase;
+    text-align: center; }
     @media only screen and (max-width: 37.5em) {
       .overview__rating-count {
-        font-size: .5rem; } }
+        font-size: 1.2rem; } }
 
 .btn-inline {
   border: none;
@@ -523,6 +584,10 @@ body {
   border-bottom: var(--line);
   display: flex;
   flex-wrap: wrap; }
+  @media only screen and (max-width: 31.25em) {
+    .list {
+      display: inline-block;
+      align-self: center; } }
   .list__item {
     flex: 0 0 50%;
     margin-bottom: .7rem; }
@@ -591,9 +656,15 @@ body {
     text-transform: uppercase;
     font-weight: 600;
     margin-bottom: .4rem; }
+    @media only screen and (max-width: 31.25em) {
+      .review__user-name {
+        font-size: 1.5rem; } }
   .review__user-date {
     font-size: 1rem;
     color: var(--color-grey-dark-3); }
+    @media only screen and (max-width: 31.25em) {
+      .review__user-date {
+        font-size: 1.3rem; } }
   .review__rating {
     font-size: 2.2rem;
     color: var(--color-primary);
@@ -619,7 +690,8 @@ body {
     font-size: 2rem;
     font-weight: 300;
     text-transform: uppercase;
-    margin-bottom: 2.5rem; }
+    margin-bottom: 2.5rem;
+    padding: 0 2rem; }
 
 .btn {
   font-size: 1.5rem;
